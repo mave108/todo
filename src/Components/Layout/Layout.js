@@ -7,8 +7,8 @@ const Layout = (props) =>{
         <div className="row">
         <div className="col-3"></div>
         <div className="col-5">
-        <div className="jumbotron">
-            <h1 className="display-4">{props.header}</h1>            
+        <div className="jumbotron" style={{padding:"10px 0 0 0"}}>
+            <h1 className="display-4" style={{textAlign: "center"}}>{props.header}</h1>            
             <hr className="my-4" />
             <div>{props.children}</div>
             
