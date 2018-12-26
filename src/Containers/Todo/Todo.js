@@ -29,8 +29,7 @@ class Todo extends React.Component{
     }
     taskStatusUpdateHandler(id){
         let updatedTask = this.props.findTaskById(id);
-        updatedTask.done = true;
-        console.log("update handler",updatedTask);
+        updatedTask.done = true;        
         this.props.upadteTask(updatedTask);
     }
 
@@ -40,13 +39,12 @@ class Todo extends React.Component{
             return ;
         }                         
         this.props.addNewtask({title: this.state.newTask,done: false});
-
-        
+        this.setState({newTask:' '});        
     }
     render(){
         return (
             <Layout header="Todo">
-                <Addtask value={this.props.newTask} 
+                <Addtask value={this.state.newTask} 
                          submitHandler={this.addTaskSubmitHandler}
                          updateHandler={this.newTaskChangeHandler}
                         />
